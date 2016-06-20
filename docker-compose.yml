@@ -13,6 +13,6 @@ services:
         ports:
         - "8080:8080"
         volumes:
-            #- ./settings.json:/tmp/settings.json
+        - ./config-client.json:/tmp/settings.json
         - ./queries:/tmp/queries
 
