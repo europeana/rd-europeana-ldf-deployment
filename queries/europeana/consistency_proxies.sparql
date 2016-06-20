@@ -1,0 +1,8 @@
+# How many proxys have ore:proxyIn and not ore:proxyFor relations (and the reverse)
+SELECT (count(*) as ?count)
+WHERE {
+  ?Proxy rdf:type ore:Proxy .
+  OPTIONAL { ?Proxy ore:proxyIn ?Aggregation } .
+  OPTIONAL { ?Proxy ore:proxyFor ?ProvidedCHO } .
+  FILTER ( !bound(?Aggregation) || !bound(?ProvidedCHO) ) 
+}

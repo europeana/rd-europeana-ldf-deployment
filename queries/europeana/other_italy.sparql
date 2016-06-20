@@ -1,0 +1,6 @@
+# List of datasets from Italy
+SELECT ?Dataset
+WHERE {
+  ?Aggregation edm:datasetName ?Dataset ;
+               edm:country "Italy"
+}

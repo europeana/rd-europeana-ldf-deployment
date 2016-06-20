@@ -1,0 +1,8 @@
+# List of rights statements of the Web Resources provided by “The European Library”
+SELECT ?WebResource ?Rights
+WHERE {
+  ?Aggregation edm:provider "The European Library" ;
+               edm:rights ?Rights ;
+               edm:isShownBy ?WebResource .
+}
+ORDER BY ?WebResource ?Rights

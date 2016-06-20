@@ -1,0 +1,8 @@
+# Objects that have spatial or coverage information
+SELECT ?ProvidedCHO
+WHERE {
+  ?Place rdf:type edm:Place .
+  ?Proxy dcterms:spatial|dc:coverage ?Place ;
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

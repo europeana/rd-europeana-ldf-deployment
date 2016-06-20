@@ -1,0 +1,6 @@
+# Agents from VIAF
+SELECT ?Agent
+WHERE {
+  ?Agent rdf:type edm:Agent .
+  FILTER strstarts(str(?Agent), "http://viaf.org/viaf/")
+}

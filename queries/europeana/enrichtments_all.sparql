@@ -1,0 +1,9 @@
+# All enrichments produced by Europeana
+SELECT ?ProvidedCHO ?property ?NonInformationResource
+WHERE {
+  ?Aggregation rdf:type edm:EuropeanaAggregation ;
+               edm:aggregatedCHO ?ProvidedCHO .
+  ?Proxy ore:proxyIn ?Aggregation ;
+         ?property ?NonInformationResource .
+  ?NonInformationResource rdf:type edm:NonInformationResource
+}

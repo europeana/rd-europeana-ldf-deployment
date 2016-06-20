@@ -1,0 +1,9 @@
+# Objects that reference concepts from Getty’ Art & Architecture Thesaurus
+SELECT ?ProvidedCHO
+WHERE {
+  ?Concept rdf:type skos:Concept .
+  FILTER strstarts(str(?Concept), "http://vocab.getty.edu/aat/") .
+  ?Proxy ?property ?Concept ;
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

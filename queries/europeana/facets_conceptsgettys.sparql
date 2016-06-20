@@ -1,0 +1,6 @@
+# Concepts from Getty’s Art & Architecture Thesaurus
+SELECT ?Concept
+WHERE {
+  ?Concept rdf:type skos:Concept .
+  FILTER strstarts(str(?Concept), "http://vocab.getty.edu/aat/") .
+}

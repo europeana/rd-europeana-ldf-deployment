@@ -1,0 +1,9 @@
+# Objects that reference agents from VIAF
+SELECT ?ProvidedCHO
+WHERE {
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+  ?Proxy ?property ?Agent ;
+         ore:proxyIn ?Aggregation .
+  ?Agent rdf:type edm:Agent .
+  FILTER strstarts(str(?Agent), "http://viaf.org/viaf/")
+}

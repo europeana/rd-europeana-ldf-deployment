@@ -1,0 +1,15 @@
+# Count of web resources by type
+SELECT ?EuropeanaType (count(*) as ?count) 
+WHERE {
+  ?Aggregation edm:object ?WebResource .
+  ?Proxy ore:proxyIn ?Aggregation .
+  ?Proxy edm:type ?EuropeanaType . 
+}
+GROUP BY ?EuropeanaType ORDER BY ?EuropeanaType
+SELECT ?EuropeanaType (count(*) as ?count) 
+WHERE {
+  ?Aggregation edm:object ?WebResource .
+  ?Proxy ore:proxyIn ?Aggregation .
+  ?Proxy edm:type ?EuropeanaType . 
+}
+GROUP BY ?EuropeanaType ORDER BY ?EuropeanaType

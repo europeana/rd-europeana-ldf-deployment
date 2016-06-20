@@ -1,0 +1,3 @@
+# All Places in Europeana
+SELECT ?Place
+WHERE { ?Place rdf:type edm:Place }

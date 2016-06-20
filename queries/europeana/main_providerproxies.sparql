@@ -1,0 +1,3 @@
+# Provider Proxies
+SELECT ?ProvidedCHO
+WHERE { ?ProvidedCHO rdf:type edm:ProvidedCHO }

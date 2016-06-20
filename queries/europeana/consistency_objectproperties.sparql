@@ -1,0 +1,7 @@
+# How many objects provided to Europeana have properties
+SELECT (count(*) as ?count)
+WHERE {
+  ?ProvidedCHO rdf:type edm:ProvidedCHO ;
+               ?property ?value .
+  FILTER ?property!=rdf:type
+}

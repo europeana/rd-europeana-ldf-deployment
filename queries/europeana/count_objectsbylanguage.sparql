@@ -1,0 +1,7 @@
+# Count objects by language
+SELECT ?Lang (count(*) as ?count) 
+WHERE {
+  ?Aggregation edm:language ?Lang ;
+               edm:aggregatedCHO ?ProvidedCHO .
+}
+GROUP BY ?Lang ORDER BY DESC(?count)

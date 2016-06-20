@@ -1,0 +1,9 @@
+# Spanish Periodicals by Year
+SELECT ?date (count(*) as ?count)  {
+  ?proxy dc:type 'info:eu-repo/semantics/article'.
+  OPTIONAL { ?proxy dc-term:issued ?issued }
+  OPTIONAL { ?proxy dc:date        ?dcdate }
+  bind (xsd:integer(substr(coalesce(?issued,?dcdate),1,4)) as ?date)
+}
+GROUP BY ?date HAVING (?count>1)
+ORDER BY ?date

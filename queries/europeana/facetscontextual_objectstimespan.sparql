@@ -1,0 +1,8 @@
+# Objects that reference a Time Span
+SELECT ?ProvidedCHO
+WHERE {
+  ?Time rdf:type edm:TimeSpan .
+  ?Proxy ?property ?Time ;
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

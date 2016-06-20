@@ -1,0 +1,9 @@
+# All Concept enrichments
+SELECT ?ProvidedCHO ?property ?Concept
+WHERE {
+  ?EuropeanaAggregation rdf:type edm:EuropeanaAggregation ;
+                        edm:aggregatedCHO ?ProvidedCHO .
+  ?Proxy ore:proxyIn ?EuropeanaAggregation ;
+         ?property ?Concept .
+  ?Concept rdf:type skos:Concept
+}

@@ -1,0 +1,8 @@
+# Objects that reference an Agent
+SELECT ?ProvidedCHO
+WHERE {
+  ?Place rdf:type edm:Agent .
+  ?Proxy ?property ?Agent ;
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

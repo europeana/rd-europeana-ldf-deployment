@@ -1,0 +1,8 @@
+# Obtain the most detailed Place in Europeana
+SELECT ?Place ?property (count(DISTINCT ?property) as ?count)
+WHERE {
+  ?Place rdf:type edm:Place ;
+         ?property ?value .
+}
+GROUP BY ?Place ?property ORDER BY DESC(?count)
+LIMIT 1

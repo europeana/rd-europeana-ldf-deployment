@@ -1,0 +1,3 @@
+# Data providers that provided objects to Europeana
+SELECT ?DataProvider
+WHERE { ?Aggregation edm:dataProvider ?DataProvider }

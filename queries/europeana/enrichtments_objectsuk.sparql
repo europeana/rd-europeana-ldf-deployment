@@ -1,0 +1,11 @@
+# Enrichments for objects provided to Europeana by institutions from the United Kingdom
+SELECT ?ProvidedCHO ?property ?NonInformationResource
+WHERE {
+  ?EuropeanaAggregation edm:country "United Kingdom" ;
+               rdf:type edm:EuropeanaAggregation ;
+               edm:aggregatedCHO ?ProvidedCHO .
+  ?Proxy ore:proxyIn ?EuropeanaAggregation ;
+         ?property ?NonInformationResource .
+  ?NonInformationResource rdf:type edm:NonInformationResource
+}
+ORDER BY ?ProvidedCHO ?property ?NonInformationResource

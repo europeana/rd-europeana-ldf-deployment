@@ -1,0 +1,7 @@
+# Count objects by aggregator
+SELECT ?Provider (count(*) as ?count)
+WHERE {
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO ;
+               edm:provider ?Provider .
+}
+GROUP BY ?Provider ORDER BY DESC(?count)

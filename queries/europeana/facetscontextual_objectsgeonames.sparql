@@ -1,0 +1,9 @@
+# Objects that reference places from Geonames
+SELECT ?ProvidedCHO
+WHERE {
+  ?Place rdf:type edm:Place .
+  FILTER strstarts(str(?Place), "http://sws.geonames.org/")
+  ?Proxy ?property ?Place ; 
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

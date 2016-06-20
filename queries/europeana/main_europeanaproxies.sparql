@@ -1,0 +1,6 @@
+# Europeana Proxies
+SELECT ?Proxy
+WHERE {
+  ?EuropeanaAggregation rdf:type edm:EuropeanaAggregation .
+  ?Proxy ore:proxyIn ?EuropeanaAggregation
+}

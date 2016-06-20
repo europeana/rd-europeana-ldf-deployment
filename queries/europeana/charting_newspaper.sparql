@@ -1,0 +1,9 @@
+# Europeana Newspapers by Year
+SELECT ?Date (COUNT(*) as ?count)
+WHERE {
+  ?x edm:hasType http://vocab.getty.edu/aat/300026656 ;
+     dc:date ?dat .
+  bind(concat(substr(?dat,1,3),"0") as ?Date)
+}
+GROUP BY ?Date HAVING (?count>1)
+ORDER BY ?Date

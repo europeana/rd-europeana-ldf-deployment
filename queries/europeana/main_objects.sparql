@@ -1,0 +1,3 @@
+# Objects provided to Europeana
+SELECT ?ProvidedCHO
+WHERE { ?ProvidedCHO rdf:type edm:ProvidedCHO }

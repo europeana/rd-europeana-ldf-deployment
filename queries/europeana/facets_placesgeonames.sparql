@@ -1,0 +1,6 @@
+# Places from Geonames
+SELECT ?Place
+WHERE {
+  ?Place rdf:type edm:Place .
+  FILTER strstarts(str(?Place), "http://sws.geonames.org/")
+}

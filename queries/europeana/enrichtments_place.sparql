@@ -1,0 +1,9 @@
+# All Place enrichments
+SELECT ?ProvidedCHO ?property ?Place
+WHERE {
+  ?EuropeanaAggregation rdf:type edm:EuropeanaAggregation ;
+                        edm:aggregatedCHO ?ProvidedCHO .
+  ?Proxy ore:proxyIn ?EuropeanaAggregation ;
+         ?property ?Place .
+  ?Place rdf:type edm:Place
+}

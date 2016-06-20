@@ -1,0 +1,8 @@
+# Objects that reference a Concept
+SELECT ?ProvidedCHO
+WHERE {
+  ?Concept rdf:type skos:Concept .
+  ?Proxy ?property ?Concept ; 
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

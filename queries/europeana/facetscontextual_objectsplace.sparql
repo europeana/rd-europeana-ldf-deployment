@@ -1,0 +1,8 @@
+# Objects that reference a Place
+SELECT ?ProvidedCHO
+WHERE {
+  ?Place rdf:type edm:Place .
+  ?Proxy ?property ?Place ;
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

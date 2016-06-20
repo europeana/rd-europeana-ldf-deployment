@@ -1,0 +1,10 @@
+# Count objects by country and provider
+SELECT ?Country ?Provider (count(*) as ?count) 
+WHERE {
+  ?AggregationEuropeana edm:country ?Country ;
+                        edm:aggregatedCHO ?ProvidedCHO .
+  ?AggregationProvider  edm:aggregatedCHO ?ProvidedCHO ;
+    	                 rdf:type ore:Aggregation ;
+    	                 edm:provider ?Provider. 
+}
+GROUP BY ?Country ?Provider ORDER BY ?Country ?Provider

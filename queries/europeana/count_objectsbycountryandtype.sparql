@@ -1,0 +1,12 @@
+# Count objects by country and type
+SELECT ?Country ?EuropeanaType (count(*) as ?count)
+WHERE {
+  ?AggregationEuropeana edm:country ?Country ;
+                        edm:aggregatedCHO ?ProvidedCHO .
+  ?AggregationProvider  edm:aggregatedCHO ?ProvidedCHO ;
+    	                 rdf:type ore:Aggregation ;
+    	                 edm:provider ?Provider .  
+  ?Proxy ore:proxyIn ?AggregationEuropeana ;
+     	  edm:type ?EuropeanaType .
+}
+GROUP BY ?Country ?EuropeanaType ORDER BY ?Country ?EuropeanaType

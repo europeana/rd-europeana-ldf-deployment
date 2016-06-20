@@ -1,0 +1,3 @@
+# All Agents in Europeana
+SELECT ?Agent
+WHERE { ?Agent rdf:type edm:Agent }

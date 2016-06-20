@@ -5,6 +5,10 @@
       "url": "http://benchmark5.eanadev.org/europeana"
     },
     {
+      "name": "Europeana (SPARQL)",
+      "url": "http://benchmark5.eanadev.org/europeana-sparql"
+    },
+    {
       "name": "DBpedia 2015",
       "url": "http://fragments.dbpedia.org/2015/en"
     },

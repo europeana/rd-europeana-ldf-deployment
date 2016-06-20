@@ -1,0 +1,8 @@
+# Count objects by aggregator and rights statements
+SELECT ?Provider ?Rights (count(*) as ?count)
+WHERE {
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO ;
+               edm:provider ?Provider ;
+               edm:rights ?Rights .
+}
+GROUP BY ?Provider ?Rights ORDER BY ?Provider ?Rights

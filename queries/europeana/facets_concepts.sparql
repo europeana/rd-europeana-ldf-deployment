@@ -1,0 +1,3 @@
+# All Concepts in Europeana
+SELECT ?Concept
+WHERE { ?Concept rdf:type skos:Concept }

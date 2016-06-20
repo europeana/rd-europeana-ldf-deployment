@@ -1,0 +1,7 @@
+# Count objects by country
+SELECT ?Country (count(*) as ?count)
+WHERE {
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO ;
+               edm:country ?Country .
+}
+GROUP BY ?Country ORDER BY DESC(?count)

@@ -1,0 +1,7 @@
+# Objects that have type or subject information
+SELECT ?ProvidedCHO
+WHERE {
+  ?Proxy dc:type|dc:subject ?Concept ;
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

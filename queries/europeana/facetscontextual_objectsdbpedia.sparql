@@ -1,0 +1,9 @@
+# Objects that reference agents from DBPedia
+SELECT ?ProvidedCHO
+WHERE {
+  ?Agent rdf:type edm:Agent .
+  FILTER regex(str(?Agent), "http://.*dbpedia[.]org/resource/.*")
+  ?Proxy ?property ?Agent ; 
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}

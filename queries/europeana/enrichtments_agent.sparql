@@ -1,0 +1,9 @@
+# All Agent enrichments
+SELECT ?ProvidedCHO ?property ?Agent
+WHERE {
+  ?EuropeanaAggregation rdf:type edm:EuropeanaAggregation ;
+                        edm:aggregatedCHO ?ProvidedCHO .
+  ?Proxy ore:proxyIn ?EuropeanaAggregation ;
+         ?property ?Agent .
+  ?Agent rdf:type edm:Agent
+}

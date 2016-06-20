@@ -1,0 +1,8 @@
+# Count objects by aggregator and the specific data providers they gather
+SELECT ?Provider ?DataProvider (count(*) as ?count)
+WHERE {
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO ;
+               edm:provider ?Provider ;
+               edm:dataProvider ?DataProvider
+}
+GROUP BY ?Provider ?DataProvider ORDER BY ?Provider ?DataProvider 

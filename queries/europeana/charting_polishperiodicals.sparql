@@ -1,0 +1,16 @@
+# Polish Periodicals by Year and Library
+SELECT
+  ?year 
+  (sum(?n1) as ?Uniwersytetu_Warszawskiego)
+  (sum(?n2) as ?Politechniki_Lubelskiej)
+  (sum(?n3) as ?Baltycka)
+{
+  ?Periodical dc:type 'periodical'@en.
+  ?Periodical ore:proxyIn/edm:dataProvider ?dataProvider.
+  ?Periodical dc:date ?date.
+  bind (xsd:integer(concat(substr(?date,1,3),'0')) as ?year)
+  bind (if(?dataProvider='e-biblioteka Uniwersytetu Warszawskiego',1,0) as ?n1)
+  bind (if(?dataProvider='Biblioteka Cyfrowa Politechniki Lubelskiej',1,0) as ?n2)
+  bind (if(?dataProvider='Bałtycka Biblioteka Cyfrowa',1,0) as ?n3)
+}
+GROUP BY ?year ORDER BY ?year

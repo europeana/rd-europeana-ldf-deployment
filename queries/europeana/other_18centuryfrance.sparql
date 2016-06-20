@@ -1,0 +1,10 @@
+# Objects provided to Europeana from the 18th century and from France
+SELECT ?ProvidedCHO ?year
+WHERE {
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO ;
+               edm:country "France" .
+  ?Proxy ore:proxyFor ?ProvidedCHO ;
+         edm:year ?year .
+  FILTER (?year > "1700" && ?year <= "1800")
+}
+ORDER BY asc(?year)

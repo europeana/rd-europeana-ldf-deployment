@@ -1,0 +1,6 @@
+# Agents from DBPedia
+SELECT ?Agent
+WHERE {
+  ?Agent rdf:type edm:Agent .
+  FILTER regex(str(?Agent), "http://.*dbpedia[.]org/resource/.*")
+}

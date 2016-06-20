@@ -1,0 +1,9 @@
+# All Time enrichments
+SELECT ?ProvidedCHO ?property ?TimeSpan
+WHERE {
+  ?EuropeanaAggregation rdf:type edm:EuropeanaAggregation ;
+                        edm:aggregatedCHO ?ProvidedCHO .
+  ?Proxy ore:proxyIn ?EuropeanaAggregation ;
+         ?property ?TimeSpan .
+  ?TimeSpan rdf:type edm:TimeSpan
+}

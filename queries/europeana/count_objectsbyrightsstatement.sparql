@@ -1,0 +1,7 @@
+# Count objects by rights statement
+SELECT ?Rights (count(*) as ?count)
+WHERE {
+  ?Aggregation edm:rights ?Rights ;
+               edm:aggregatedCHO ?ProvidedCHO .
+}
+GROUP BY ?Rights ORDER BY DESC(?count)

@@ -1,0 +1,10 @@
+# Count objects by type which have an edm:isShownBy
+SELECT ?EuropeanaType (count(*) as ?count)
+WHERE {
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO ;
+               rdf:type ore:Aggregation ;
+               edm:isShownBy ?WebResource .
+  ?Proxy ore:proxyIn ?Aggregation ;
+         edm:type ?EuropeanaType .
+}
+GROUP BY ?EuropeanaType ORDER BY ?EuropeanaType

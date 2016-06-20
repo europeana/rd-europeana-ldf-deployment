@@ -1,0 +1,7 @@
+# Objects that have creator or contributor information
+SELECT ?ProvidedCHO
+WHERE {
+  ?Proxy dc:creator|dc:contributor ?Concept ;
+         ore:proxyIn ?Aggregation . 
+  ?Aggregation edm:aggregatedCHO ?ProvidedCHO
+}
