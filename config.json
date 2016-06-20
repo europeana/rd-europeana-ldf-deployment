@@ -1,0 +1,17 @@
+{
+  "title": "Europeana Linked Data Fragments server",
+  "datasources": {
+      "europeana": {
+          "title": "Europeana",
+          "type": "HdtDatasource",
+          "description": "The Europeana dataset",
+          "settings": { "file": "/data/dataset.hdt" }
+      },
+      "dbpedia-sparql": {
+        "title": "DBpedia 3.9 (Virtuoso)",
+        "type": "SparqlDatasource",
+        "description": "DBpedia 3.9 with a Virtuoso back-end",
+        "settings": { "endpoint": "http://dbpedia.restdesc.org/", "defaultGraph": "http://dbpedia.org" }
+    }
+  }
+}
