@@ -2,16 +2,30 @@
   "title": "Europeana Linked Data Fragments server",
   "datasources": {
       "europeana": {
-          "title": "Europeana",
+          "title": "Europeana (HDT)",
           "type": "HdtDatasource",
-          "description": "The Europeana dataset",
+          "description": "The Europeana dataset with a HDT back-end",
           "settings": { "file": "/data/dataset.hdt" }
       },
-      "dbpedia-sparql": {
-        "title": "DBpedia 3.9 (Virtuoso)",
+      "europeana-sparql": {
+        "title": "Europeana (SPARQL)",
         "type": "SparqlDatasource",
-        "description": "DBpedia 3.9 with a Virtuoso back-end",
-        "settings": { "endpoint": "http://dbpedia.restdesc.org/", "defaultGraph": "http://dbpedia.org" }
+        "description": "The Europeana dataset with a Virtuoso back-end",
+        "settings": { "endpoint": "http://europeana.ontotext.com/", "defaultGraph": "http://data.europeana.eu" }
     }
+  },
+  "prefixes": {
+      "dc": "http://purl.org/dc/elements/1.1/",
+      "dct": "http://purl.org/dc/terms/",
+      "edm": "http://www.europeana.eu/schemas/edm/",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "ore": "http://www.openarchives.org/ore/terms/",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "rdaGr2": "http://rdvocab.info/ElementsGr2/",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
   }
 }
