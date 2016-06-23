@@ -1,6 +1,9 @@
 #!/bin/bash
 # Automatically publishes the datadump /opt/dump.tar.gz in the LDF server
 
+echo "EDIT THIS FILE IF YOU WANT TO RUN THIS!!!" # TODO
+exit 1; # TODO
+
 basedir="/opt"
 
 # Prepare new HDT files
@@ -16,6 +19,10 @@ mv $basedir/dumpnew $basedir/dump/
 
 # Recreate server config file
 ./create-config-server.sh $basedir/dump/dump/ > config-server.json
+
+# Clean cache
+rm -rf tmp-cache
+rm -rf tmp-nginx
 
 # Restart the LDF server
 export BASEDIR=$basedir/dump/dump
