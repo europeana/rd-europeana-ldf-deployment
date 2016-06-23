@@ -6,7 +6,7 @@ services:
         ports:
         - "80:3000"
         volumes:
-        - /opt/dump/dump/:/data
+        - ${BASEDIR}:/data
         - ./config-server.json:/tmp/config.json
         command: /tmp/config.json
     client-web:

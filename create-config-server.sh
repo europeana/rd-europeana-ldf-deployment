@@ -3,26 +3,25 @@
 
 basedir="/data/"
 idprefix="europeana-"
-filesuffix=".rdf.hdt"
-amount=$1
+absolutedir=$1
+amount=$(ls -1 $absolutedir | grep .hdt | wc -l)
 comma=","
-
-referencesindent="                "
-datasourcesindent="      "
 
 references=""
 datasources=""
 
-for i in $(seq 1 $amount); do
+i=1
+for absolutefile in $absolutedir*.hdt; do
     id="$idprefix$i"
-    file="$basedir$i$filesuffix"
+    file="$basedir$(basename $absolutefile)"
 
     if [ $i -eq $amount ]; then
         comma=""
     fi
-    references="$references$referencesindent\"$id\"$comma\\n"
+    references="$references\"$id\"$comma"
     datasource="\"$id\": { \"hide\": \"true\", \"title\": \"$id\", \"type\": \"HdtDatasource\", \"settings\": { \"file\": \"$file\" } }"
-    datasources="$datasources$datasourcesindent$datasource,\\n"
+    datasources="$datasources$datasource,"
+    let i++
 done
 
 sed -e "s/__REFERENCES__/$references/" -e "s@__DATASOURCES__@$datasources@" config-server-template.json

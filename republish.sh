@@ -14,6 +14,10 @@ docker-compose stop
 rm -rf $basedir/dump
 mv $basedir/dumpnew $basedir/dump/
 
+# Recreate server config file
+./create-config-server.sh $basedir/dump/dump/ > config-server.json
+
 # Restart the LDF server
+export BASEDIR=$basedir/dump/dump
 docker-compose up -d
 
