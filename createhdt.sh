@@ -1,6 +1,6 @@
 #!/bin/bash
 # Converts a file to HDT
-#file="dataset-test.nt.gz"
-file=$1
-docker run -it --rm -v $(pwd)/data:/data rfdhdt/hdt-cpp rdf2hdt -f ntriples /data/$file /data/dataset.hdt
+basedir=$1
+file=$2
+docker run -it --rm -v $basedir:/data rfdhdt/hdt-cpp rdf2hdt -f rdfxml /data/$1 /data/$1.hdt
 
