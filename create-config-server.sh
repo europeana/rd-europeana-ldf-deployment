@@ -4,7 +4,7 @@
 basedir="/data/"
 idprefix="europeana-"
 absolutedir=$1
-amount=$(ls -1 $absolutedir | grep .hdt | wc -l)
+amount=$(ls -1 $absolutedir | grep "[0-9]*\.hdt$" | wc -l)
 comma=","
 
 references=""
