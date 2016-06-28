@@ -14,7 +14,7 @@ for dir in $basedir/*; do
         for file in $dir/*; do
             sed -e "1,1d" -e '$d' $file >> $target
         done
-        rm -rf $dir
+        #rm -rf $dir
     fi
     echo '</rdf:RDF>' >> $target
 
