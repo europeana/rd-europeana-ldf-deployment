@@ -1,9 +1,6 @@
 #!/bin/bash
 # Automatically publishes the datadump /opt/dump.tar.gz in the LDF server
 
-#echo "EDIT THIS FILE IF YOU WANT TO RUN THIS!!!" # TODO
-#exit 1; # TODO
-
 basedir="/opt/old_dumps"
 
 # Prepare new HDT files
