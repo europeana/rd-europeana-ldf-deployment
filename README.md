@@ -1,5 +1,7 @@
 Scripts for setting up the Europeana LDF server
 
+Note: until the CompositeDatasource feature has been merged to the master branch of the LDF server, the [develop branch](https://github.com/LinkedDataFragments/Server.js/tree/develop) must be used.
+
 ## (Re-)Publication
 (Re-)publish a dataset from `/opt/dump` by running `republish.sh`.
 
